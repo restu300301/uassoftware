@@ -1,0 +1,21 @@
+Gabungan dari internal dan eksternal testing. Fokus integrasi & alur.
+
+1. Matrix Testing
+Cek hubungan antara modul:
+
+Modul	Dependensi	Status
+RFID Reader	UART	OK
+WiFi Module	Network	OK
+HTTP Client	WiFi	Butuh retry
+JSON Parser	Server Respon	OK
+2. Regression Testing
+Setelah update fitur “tambah keterangan absensi”, tes ulang:
+Kirim data RFID
+Koneksi WiFi
+Respon server
+Notifikasi ke user
+3. Pattern Testing
+Uji pola absensi:
+Pengguna scan terus-menerus (spam)
+RFID yang sama 2x dalam < 5 detik
+Scan RFID + mati listrik (uji recovery)
