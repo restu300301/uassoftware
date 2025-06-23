@@ -1,0 +1,23 @@
+okus ke input/output sistem secara keseluruhan (tanpa lihat isi kode).
+
+1. Boundary Value Analysis (BVA)
+Contoh:
+
+Panjang ID RFID: 10 digit
+Uji: 9, 10, dan 11 digit
+Waktu absensi: 06:00–18:00
+Uji: 05:59, 06:00, 18:00, 18:01
+2. Equivalence Partitioning
+Input valid: RFID terdaftar
+Input tidak valid: RFID kosong, RFID asing
+Output yang diharapkan: sukses login, ditolak, error
+3. Comparison Testing > Decision Table
+RFID	Jam	Status WiFi	Respon
+Valid	Dalam jam kerja	Tersambung	Sukses
+Valid	Luar jam kerja	Tersambung	Gagal (terlambat)
+Tidak valid	Kapan pun	Tersambung	Ditolak
+Valid	Dalam jam	WiFi putus	Gagal kirim
+4. Sample Testing > Robustness Testing
+Masukkan RFID rusak (karakter aneh)
+WiFi disconnect saat proses
+Server delay respon
