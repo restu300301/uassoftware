@@ -1,0 +1,25 @@
+Fokus ke struktur kode program di ESP32 dan logika komunikasi RFID ke server.
+
+1. Desk Checking
+Manual cek logika program: koneksi WiFi, pembacaan RFID, kirim data ke server.
+Cek kesalahan umum: typo, loop tak berakhir, pointer/null, variabel tak digunakan.
+2. Code Walkthrough
+Bareng tim (misal 2–3 orang), bahas tiap fungsi:
+readRFID()
+connectWiFi()
+sendDataToWeb()
+Temuan: perlu retry kalau kirim data gagal.
+3. Formal Inspections
+Checklist format: standar coding C/C++, naming, error handling.
+Audit: struktur if/else kompleks, perlu dirapikan pakai switch-case atau state machine.
+4. Control Flow Testing
+Basic Path Testing:
+
+Hitung cyclomatic complexity (misal hasilnya 6).
+Buat 6 path uji:
+RFID valid
+RFID tidak dikenal
+WiFi terputus
+Server down
+Data terkirim sukses
+Respon server error (500)
